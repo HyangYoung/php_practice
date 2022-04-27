@@ -1,3 +1,15 @@
+<?php
+function print_title(){
+    if(isset($_GET['id'])) {
+        echo $_GET['id'];
+    } else {
+        echo "Welcome";
+    }
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,20 +38,13 @@
 
 <h2>
     <?php
-    if(isset($_GET['id'])){
-        echo $_GET['id'];
-    } else {
-        echo "Welcome";
-    }
+    print_title();
     ?>
 </h2>
 
 <?php
-if(isset($_GET['id'])){
-    echo file_get_contents("data/".$_GET['id']);
-} else {
-    echo "Hello, PHP";
-}
+print_title();
 ?>
+
 </body>
 </html>
